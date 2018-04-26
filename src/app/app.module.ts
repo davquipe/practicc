@@ -15,6 +15,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { BreadcrumbsComponent } from './shared/breadcrumbs/breadcrumbs.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { PagesComponent } from './pages/pages.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     HeaderComponent,
     SidebarComponent,
     BreadcrumbsComponent,
-    DashboardComponent
+    DashboardComponent,
+    PagesComponent
   ],
   imports: [
     BrowserModule,
