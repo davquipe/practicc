@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { NopagefoundComponent } from './shared/nopagefound/nopagefound.component';
 import { Graficas1Component } from './pages/graficas1/graficas1.component';
+import { RegisterComponent } from './login/register.component';
 
 
 const appRoutes: Routes = [
@@ -22,7 +23,7 @@ const appRoutes: Routes = [
 
   },
   { path: 'login', component: LoginComponent },
-  { path: 'registrer', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: '**', component: NopagefoundComponent }
 ];
 
