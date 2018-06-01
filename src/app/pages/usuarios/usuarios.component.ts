@@ -23,6 +23,15 @@ export class UsuariosComponent implements OnInit {
     this._usuarioService.cargarUsuarios()
           .subscribe( usuarios => this.usuarios = usuarios )
   }
+
+  buscarUsuario( termino: string ){
+    if (termino.length <= 0){
+      this.cargarUsuarios();
+      return;
+    }
+    this._usuarioService.buscarUsuarios(termino)
+          .subscribe(usuarios => this.usuarios = usuarios);
+  }
 }
 
 

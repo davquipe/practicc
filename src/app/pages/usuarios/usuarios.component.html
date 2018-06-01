@@ -2,8 +2,8 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <!-- #input (keyup)="buscarUsuario( input.value )" -->
-                <input type="text" class="form-control" placeholder="Buscar usuario...">
+
+                <input #input (keyup)="buscarUsuario( input.value )" type="text" class="form-control" placeholder="Buscar usuario...">
 
             </div>
         </div>
@@ -23,7 +23,7 @@
               </button>
                 </div>
 
-                <h3 class="card-title">Médicos registrados ( <small> {{ _usuarioService.totalUsuarios }} </small> )</h3>
+                <h3 class="card-title">Usuario registrados ( <small> {{ _usuarioService.totalUsuarios }} </small> )</h3>
 
                 <table class="table table-hover">
                     <thead>
