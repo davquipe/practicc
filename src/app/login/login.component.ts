@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { UsuarioService } from '../services/service.index';
+import { Usuario } from '../models/usuario.model';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +12,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  recuerdame: Boolean = false;
+
+  constructor(
+    public router: Router,
+    public _usuarioService: UsuarioService
+  ) { }
 
   ngOnInit() {
+  }
+
+  ingresar( forma: NgForm){
+
+    if( forma.invalid ){
+      return;
+    }
+
+    let usuario = new Usuario (null, null, null, forma.value.login, forma.value.clave );
+
+    this._usuarioService.login( usuario, forma.value.recuerdame  )
+                .subscribe(resp => {
+                  console.log(resp);
+                });
+    
+    
   }
 
 }

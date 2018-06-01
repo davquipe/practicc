@@ -9,11 +9,16 @@ import { map } from 'rxjs/operators';
 @Injectable()
 export class UsuarioService {
 
-  totalUsuarios: number = 0;
+  totalUsuarios: Number = 0;
 
   constructor(
     public http: HttpClient,
   ) { }
+
+  login( usuario: Usuario, recordar: Boolean = false ){
+    let url = URL_SERVICIOS + '/login';
+    return this.http.post( url, usuario );
+  }
 
   cargarUsuarios(){
     let url = URL_SERVICIOS + '/usuario';
@@ -31,5 +36,9 @@ export class UsuarioService {
     return this.http.get(url)
                 .map((resp: any) => resp.usuarios);
   }
+
+borrarUsuario( id: string ){
+  let url = URL_SERVICIOS + '/usuario' + id;
+}
 
 }

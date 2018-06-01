@@ -32,6 +32,10 @@ export class UsuariosComponent implements OnInit {
     this._usuarioService.buscarUsuarios(termino)
           .subscribe(usuarios => this.usuarios = usuarios);
   }
+
+  borrarUsuario( usuario: Usuario ){
+    
+  }
 }
 
 
