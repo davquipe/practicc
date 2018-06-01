@@ -7,6 +7,8 @@ import { Graficas1Component } from './graficas1/graficas1.component';
 import { ProgressComponent } from './progress/progress.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 
+import { UsuarioComponent } from './usuarios/usuario.component';
+
 
 
 const pagesRoutes: Routes = [
@@ -20,6 +22,7 @@ const pagesRoutes: Routes = [
 
         //   Matenimiento
           { path: 'usuarios', component: UsuariosComponent, data: {titulo: 'Mantemiento de Usuarios'} },
+          { path: 'usuario/:id', component: UsuarioComponent, data: { titulo: 'Actualizar Usuario' } },
           { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
         ]
     }
