@@ -1,3 +1,64 @@
-<p>
-  usuarios works!
-</p>
+<div class="row animated fadeIn">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <!-- #input (keyup)="buscarUsuario( input.value )" -->
+                <input type="text" class="form-control" placeholder="Buscar usuario...">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="text-right">
+                    <button [routerLink]="['/usuario','nuevo']" type="button" class="btn waves-effect waves-light btn-rounded btn-primary">
+                <i class="fa fa-plus"></i> 
+                Crear Usuario
+              </button>
+                </div>
+
+                <h3 class="card-title">Médicos registrados ( <small> {{ _usuarioService.totalUsuarios }} </small> )</h3>
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Foto</th>
+                            <th>Nombre</th>
+                            <th>Login</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let usuario of usuarios">
+                            <td>
+                                <img [src]="usuario.img | imagen:'usurio'" class="img-50 img-circle">
+                            </td>
+                            <td>
+                                {{ usuario.nombre }}
+                            </td>
+                            <td>
+                                {{ usuario.login }}
+                            </td>
+                            <td>
+                                <button [routerLink]="['/usuario', usuario._id ]" class="btn btn-primary">
+                            <i class="fa fa-edit"></i>
+                          </button>
+
+                                <button (click)="borrarUsuario( usuario )" class="btn btn-danger">
+                            <i class="fa fa-trash-o"></i>
+                          </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>

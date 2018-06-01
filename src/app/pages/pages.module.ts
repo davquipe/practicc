@@ -11,6 +11,9 @@ import { PagesComponent } from './pages.component';
 import { UsuarioComponent } from './usuarios/usuario.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { PipesModule } from '../pipes/pipes.module';
+import { RxjsComponent } from './rxjs/rxjs.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,7 +23,8 @@ import { PipesModule } from '../pipes/pipes.module';
         ProgressComponent,
         Graficas1Component,
         UsuarioComponent,
-        UsuariosComponent
+        UsuariosComponent,
+        RxjsComponent
     ],
     exports: [
         DashboardComponent,
@@ -29,6 +33,8 @@ import { PipesModule } from '../pipes/pipes.module';
     ],
     imports: [
         SharedModule,
+        CommonModule,
+        FormsModule,
         PAGE_ROUTES,
         PipesModule
     ]
