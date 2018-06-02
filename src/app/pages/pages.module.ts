@@ -12,6 +12,8 @@ import { UsuarioComponent } from './usuarios/usuario.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ArticuloComponent } from './articulos/articulo.component';
 import { ArticulosComponent } from './articulos/articulos.component';
+import { CategoriaComponent } from './categorias/categoria.component';
+import { CategoriasComponent } from './categorias/categorias.component';
 import { PipesModule } from '../pipes/pipes.module';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { CommonModule } from '@angular/common';
@@ -28,6 +30,8 @@ import { FormsModule } from '@angular/forms';
         UsuariosComponent,
         ArticuloComponent,
         ArticulosComponent,
+        CategoriaComponent,
+        CategoriasComponent,
         RxjsComponent
     ],
     exports: [

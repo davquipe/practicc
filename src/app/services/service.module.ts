@@ -7,7 +7,8 @@ import {
   SidebarService,
   SharedService,
   UsuarioService,
-  ArticuloService
+  ArticuloService,
+  CategoriaService
  } from './service.index';
 
 
@@ -20,7 +21,8 @@ import {
     SidebarService,
     SharedService,
     UsuarioService,
-    ArticuloService
+    ArticuloService,
+    CategoriaService
   ],
   declarations: []
 })
