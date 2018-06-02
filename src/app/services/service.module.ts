@@ -6,7 +6,8 @@ import { CommonModule } from '@angular/common';
 import {
   SidebarService,
   SharedService,
-  UsuarioService
+  UsuarioService,
+  ArticuloService
  } from './service.index';
 
 
@@ -18,7 +19,8 @@ import {
   providers: [
     SidebarService,
     SharedService,
-    UsuarioService
+    UsuarioService,
+    ArticuloService
   ],
   declarations: []
 })

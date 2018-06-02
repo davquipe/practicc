@@ -6,8 +6,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
 import { ProgressComponent } from './progress/progress.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { ArticulosComponent } from './articulos/articulos.component';
 
 import { UsuarioComponent } from './usuarios/usuario.component';
+import { ArticuloComponent } from './articulos/articulo.component';
 
 
 
@@ -22,7 +24,9 @@ const pagesRoutes: Routes = [
 
         //   Matenimiento
           { path: 'usuarios', component: UsuariosComponent, data: {titulo: 'Mantemiento de Usuarios'} },
+          { path: 'articulos', component: ArticulosComponent, data: { titulo: 'Mantemiento de Articulos' } },
           { path: 'usuario/:id', component: UsuarioComponent, data: { titulo: 'Actualizar Usuario' } },
+          { path: 'articulo/:id', component: ArticuloComponent, data: { titulo: 'Actualizar Articulo' } },
           { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
         ]
     }
