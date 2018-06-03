@@ -5,7 +5,9 @@
                 <h4 class="m-b-0 text-white">Other Sample form</h4>
             </div>
             <div class="card-body">
-                <form action="#">
+
+                <form ngNativeValidate [formGroup]="forma" action="#">
+
                     <div class="form-body">
                         <h3 class="card-title">Informacion de Persona</h3>
                         <hr>
@@ -13,14 +15,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">Nombre</label>
-                                    <input type="text" name="nombre" class="form-control" placeholder="Nombre">
+                                    <input formControlName="nombre" type="text" name="nombre" class="form-control" placeholder="Nombre">
                                 </div>
                             </div>
                             <!--/span-->
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">Login</label>
-                                    <input type="text" name="login" class="form-control" placeholder="Login">
+                                    <input formControlName="login" type="text" name="login" class="form-control" placeholder="Login">
                                 </div>
                             </div>
                             <!--/span-->
@@ -30,14 +32,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">Contraseña</label>
-                                    <input type="password" name="clave" class="form-control" placeholder="Contraseña">
+                                    <input formControlName="clave" type="password" name="clave" class="form-control" placeholder="Contraseña">
                                 </div>
                             </div>
                             <!--/span-->
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">Confirmar Contraseña</label>
-                                    <input type="password" name="clave1" class="form-control" placeholder="Confirmar Contraseña">
+                                    <input formControlName="clave1" type="password" name="clave1" class="form-control" placeholder="Confirmar Contraseña">
                                 </div>
                             </div>
                             <!--/span-->
@@ -47,14 +49,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">Tipo Documento</label>
-                                    <input type="text" name="tipoDocumento" class="form-control" placeholder="Tipo Documento">
+                                    <input formControlName="tipoDocumento" type="text" name="tipoDocumento" class="form-control" placeholder="Tipo Documento">
                                 </div>
                             </div>
                             <!--/span-->
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">Dni</label>
-                                    <input type="text" name="numDocumento" class="form-control" placeholder="Dni">
+                                    <input formControlName="numDocumento" type="text" name="numDocumento" class="form-control" placeholder="Dni">
                                 </div>
                             </div>
                             <!--/span-->
@@ -66,14 +68,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">Direccion</label>
-                                    <input type="text" name="direccion" class="form-control" placeholder="Direccion">
+                                    <input formControlName="direccion" type="text" name="direccion" class="form-control" placeholder="Direccion">
                                 </div>
                             </div>
                             <!--/span-->
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">Telefono</label>
-                                    <input type="text" name="telefono" class="form-control" placeholder="Telefono">
+                                    <input formControlName="telefono" type="text" name="telefono" class="form-control" placeholder="Telefono">
                                 </div>
                             </div>
                             <!--/span-->
@@ -83,7 +85,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">Email</label>
-                                    <input type="text" name="email" class="form-control" placeholder="Email">
+                                    <input formControlName="email" type="text" name="email" class="form-control" placeholder="Email">
                                 </div>
                             </div>
                             <!--/span-->
@@ -101,7 +103,7 @@
                         <div class="row">
                             <div class="col-md-12 ">
                                 <div class="checkbox checkbox-primary p-t-0">
-                                    <input name="condiciones" id="checkbox-signup" type="checkbox">
+                                    <input formControlName="condiciones" name="condiciones" id="checkbox-signup" type="checkbox">
                                     <label for="checkbox-signup"> Estoy de acuerdo con los <a href="#">términos</a></label>
                                 </div>
                             </div>

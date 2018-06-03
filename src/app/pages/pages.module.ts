@@ -17,7 +17,7 @@ import { CategoriasComponent } from './categorias/categorias.component';
 import { PipesModule } from '../pipes/pipes.module';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -43,6 +43,7 @@ import { FormsModule } from '@angular/forms';
         SharedModule,
         CommonModule,
         FormsModule,
+        ReactiveFormsModule,
         PAGE_ROUTES,
         PipesModule
     ]
