@@ -13,12 +13,15 @@ import { UsuarioComponent } from './usuarios/usuario.component';
 import { ArticuloComponent } from './articulos/articulo.component';
 import { CategoriaComponent } from './categorias/categoria.component';
 
+import { LoginGuardGuard } from '../services/service.index';
+
 
 
 const pagesRoutes: Routes = [
     {
         path: '',
         component: PagesComponent,
+        canActivate: [LoginGuardGuard],
         children: [
           { path: 'dashboard', component: DashboardComponent, data: {titulo: 'Dashboard'} },
           { path: 'progress', component: ProgressComponent, data: {titulo: 'Progress'} },

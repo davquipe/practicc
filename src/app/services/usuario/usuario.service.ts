@@ -10,10 +10,30 @@ import { map } from 'rxjs/operators';
 export class UsuarioService {
 
   totalUsuarios: Number = 0;
+  usuario: Usuario;
+  token: string;
 
   constructor(
     public http: HttpClient,
-  ) { }
+  ) { 
+    this.cargarStorage();
+  }
+
+  estaLogueado() {
+    return ( this.token.length > 5 ) ? true : false;
+  }
+
+  cargarStorage() {
+
+    if ( localStorage.getItem('token')) {
+      this.token = localStorage.getItem('token');
+      this.usuario = JSON.parse( localStorage.getItem('usuario') );
+    } else {
+      this.token = '';
+      this.usuario = null;
+    }
+
+  }
 
   login( usuario: Usuario, recordar: boolean = false ){
     if(recordar){

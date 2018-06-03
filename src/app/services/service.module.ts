@@ -8,7 +8,8 @@ import {
   SharedService,
   UsuarioService,
   ArticuloService,
-  CategoriaService
+  CategoriaService,
+  LoginGuardGuard
  } from './service.index';
 
 
@@ -22,7 +23,8 @@ import {
     SharedService,
     UsuarioService,
     ArticuloService,
-    CategoriaService
+    CategoriaService,
+    LoginGuardGuard
   ],
   declarations: []
 })
