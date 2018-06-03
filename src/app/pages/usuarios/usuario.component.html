@@ -6,7 +6,7 @@
             </div>
             <div class="card-body">
 
-                <form ngNativeValidate [formGroup]="forma" action="#">
+                <form ngNativeValidate [formGroup]="forma" (ngSubmit)="registrarUsuario()" action="#">
 
                     <div class="form-body">
                         <h3 class="card-title">Informacion de Persona</h3>
@@ -15,14 +15,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">Nombre</label>
-                                    <input formControlName="nombre" type="text" name="nombre" class="form-control" placeholder="Nombre">
+                                    <input formControlName="nombre" type="text" name="nombre" class="form-control" placeholder="Nombre" required>
                                 </div>
                             </div>
                             <!--/span-->
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">Login</label>
-                                    <input formControlName="login" type="text" name="login" class="form-control" placeholder="Login">
+                                    <input formControlName="login" type="text" name="login" class="form-control" placeholder="Login" required>
                                 </div>
                             </div>
                             <!--/span-->
@@ -32,15 +32,20 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">Contraseña</label>
-                                    <input formControlName="clave" type="password" name="clave" class="form-control" placeholder="Contraseña">
+                                    <input formControlName="clave" type="password" name="clave" class="form-control" placeholder="Contraseña" required>
                                 </div>
                             </div>
                             <!--/span-->
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">Confirmar Contraseña</label>
-                                    <input formControlName="clave1" type="password" name="clave1" class="form-control" placeholder="Confirmar Contraseña">
+                                    <input formControlName="clave2" type="password" name="clave2" class="form-control" placeholder="Confirmar Contraseña" required>
                                 </div>
+                            </div>
+                            <div class="form-group" *ngIf="forma.errors?.sonIguales && !forma.pristine">
+                                <p class="text-danger">
+                                    Las contraseñas deben de ser iguales
+                                </p>
                             </div>
                             <!--/span-->
                         </div>
@@ -49,14 +54,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">Tipo Documento</label>
-                                    <input formControlName="tipoDocumento" type="text" name="tipoDocumento" class="form-control" placeholder="Tipo Documento">
+                                    <input formControlName="tipoDocumento" type="text" name="tipoDocumento" class="form-control" placeholder="Tipo Documento" required>
                                 </div>
                             </div>
                             <!--/span-->
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">Dni</label>
-                                    <input formControlName="numDocumento" type="text" name="numDocumento" class="form-control" placeholder="Dni">
+                                    <input formControlName="numDocumento" type="text" name="numDocumento" class="form-control" placeholder="Dni" required>
                                 </div>
                             </div>
                             <!--/span-->
@@ -110,8 +115,8 @@
                         </div>
                     </div>
                     <div class="form-actions">
-                        <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Save</button>
-                        <button type="button" class="btn btn-inverse">Cancel</button>
+                        <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Guardar </button>
+                        <button type="button" class="btn btn-inverse">Cancelar</button>
                     </div>
                 </form>
             </div>
