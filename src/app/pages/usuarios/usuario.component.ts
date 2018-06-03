@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { FormGroup, FormControl } from '@angular/forms';
+
 @Component({
   selector: 'app-usuario',
   templateUrl: './usuario.component.html',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuarioComponent implements OnInit {
 
+  forma: FormGroup;
+
   constructor() { }
 
   ngOnInit() {
+
+    this.forma = new FormGroup({
+      nombre: new FormControl()
+    });
   }
 
 }
