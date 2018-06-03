@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    let usuario = new Usuario (null, null, null, forma.value.login, forma.value.clave );
+    let usuario = new Usuario (null, forma.value.login, forma.value.clave, null, null);
 
     this._usuarioService.login( usuario, forma.value.recuerdame  )
                 .subscribe(resp => {
