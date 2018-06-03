@@ -1,8 +1,15 @@
 import { Component, OnInit, group } from '@angular/core';
-
+import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import * as swal from 'sweetalert';
+import { Usuario } from '../../models/usuario.model';
+
+
+import { 
+  UsuarioService 
+} from '../../services/service.index';
+
 
 
 @Component({
@@ -14,7 +21,10 @@ export class UsuarioComponent implements OnInit {
 
   forma: FormGroup;
 
-  constructor() { }
+  constructor(
+    public _usuarioService: UsuarioService,
+    public router: Router
+  ) { }
 
   sonIguales( campo1: string , campo2: string  ) {
 
@@ -58,15 +68,20 @@ export class UsuarioComponent implements OnInit {
     }
 
     if ( !this.forma.value.condiciones ) {
-      if ( !this.forma.value.condiciones ) {
-        swal('Importante', 'Debe de aceptar las condiciones', 'warning');
-        return;
-      }
-
+      swal('Importante', 'Debe de aceptar las condiciones', 'warning');
       return;
     }
+    let usuario = new Usuario(
+      this.forma.value.nombre,
+      this.forma.value.login,
+      this.forma.value.clave,
+      this.forma.value.tipoDocumento,
+      this.forma.value.numDocumento
+    );
 
-    console.log(this.forma.value);
+    this._usuarioService.crearUsuario( usuario )
+              .subscribe(resp => this.router.navigate(['/usuarios']));
+
   }
 
 }

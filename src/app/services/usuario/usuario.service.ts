@@ -37,6 +37,11 @@ export class UsuarioService {
                 .map((resp: any) => resp.usuarios);
   }
 
+  crearUsuario( usuario: Usuario){
+    let url = URL_SERVICIOS + '/usuario';
+    return this.http.post(url, usuario);
+  }
+
 borrarUsuario( id: string ){
   let url = URL_SERVICIOS + '/usuario' + id;
 }
