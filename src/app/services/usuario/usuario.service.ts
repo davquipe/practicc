@@ -15,7 +15,13 @@ export class UsuarioService {
     public http: HttpClient,
   ) { }
 
-  login( usuario: Usuario, recordar: Boolean = false ){
+  login( usuario: Usuario, recordar: boolean = false ){
+    if(recordar){
+      localStorage.setItem('login', usuario.login );
+    } else{
+      localStorage.removeItem('login');
+    }
+
     let url = URL_SERVICIOS + '/login';
     return this.http.post( url, usuario )
                 .map( (resp: any) => {
@@ -24,7 +30,7 @@ export class UsuarioService {
                   localStorage.setItem('usuario', JSON.stringify(resp.usuario ));
 
                 return true;
-                })
+                });
   }
 
   cargarUsuarios(){

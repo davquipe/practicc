@@ -11,8 +11,9 @@ import { Usuario } from '../models/usuario.model';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  recuerdame: Boolean = false;
+  
+  login: string;
+  recuerdame: boolean = false;
 
   constructor(
     public router: Router,
@@ -20,6 +21,11 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
+    this.login = localStorage.getItem('login') || '';
+    if ( this.login.length > 1 ) {
+      this.recuerdame = true;
+    }
   }
 
   ingresar( forma: NgForm){
@@ -32,8 +38,6 @@ export class LoginComponent implements OnInit {
 
     this._usuarioService.login( usuario, forma.value.recuerdame  )
                 .subscribe(resp => this.router.navigate(['/dashboard']));
-    
-    
   }
 
 }
