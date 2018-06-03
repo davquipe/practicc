@@ -10,7 +10,6 @@ export class Usuario {
         public email?: string,
         public img?: string,
         public role?: string,
-        public condicion?: boolean,
         public _id?: string
     ) {}
 }
