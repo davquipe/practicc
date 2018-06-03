@@ -21,7 +21,7 @@ export class UsuarioService {
                 .map( (resp: any) => {
                   localStorage.setItem('id', resp.id );
                   localStorage.setItem('token', resp.token );
-                  localStorage.setItem('id', JSON.stringify(resp.usuario ));
+                  localStorage.setItem('usuario', JSON.stringify(resp.usuario ));
 
                 return true;
                 })
