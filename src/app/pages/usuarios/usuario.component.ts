@@ -2,6 +2,8 @@ import { Component, OnInit, group } from '@angular/core';
 
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+import * as swal from 'sweetalert';
+
 
 @Component({
   selector: 'app-usuario',
@@ -56,7 +58,10 @@ export class UsuarioComponent implements OnInit {
     }
 
     if ( !this.forma.value.condiciones ) {
-     console.log('Debe de aceptar las condiciones');
+      if ( !this.forma.value.condiciones ) {
+        swal('Importante', 'Debe de aceptar las condiciones', 'warning');
+        return;
+      }
 
       return;
     }
