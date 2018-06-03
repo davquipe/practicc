@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { URL_SERVICIOS } from '../../config/config';
 import { Usuario } from '../../models/usuario.model';
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 
 
@@ -15,6 +16,7 @@ export class UsuarioService {
 
   constructor(
     public http: HttpClient,
+    public router: Router
   ) { 
     this.cargarStorage();
   }
@@ -33,6 +35,16 @@ export class UsuarioService {
       this.usuario = null;
     }
 
+  }
+
+  logout() {
+    this.usuario = null;
+    this.token = '';
+
+    localStorage.removeItem('token');
+    localStorage.removeItem('usuario');
+
+    this.router.navigate(['/login']);
   }
 
   login( usuario: Usuario, recordar: boolean = false ){
