@@ -37,6 +37,16 @@ export class UsuarioService {
 
   }
 
+  guardarStorage( id: string, token: string, usuario: Usuario ) {
+
+    localStorage.setItem('id', id );
+    localStorage.setItem('token', token );
+    localStorage.setItem('usuario', JSON.stringify(usuario) );
+
+    this.usuario = usuario;
+    this.token = token;
+  }
+
   logout() {
     this.usuario = null;
     this.token = '';
@@ -57,11 +67,10 @@ export class UsuarioService {
     let url = URL_SERVICIOS + '/login';
     return this.http.post( url, usuario )
                 .map( (resp: any) => {
-                  localStorage.setItem('id', resp.id );
-                  localStorage.setItem('token', resp.token );
-                  localStorage.setItem('usuario', JSON.stringify(resp.usuario ));
 
-                return true;
+                  this.guardarStorage( resp.id, resp.token, resp.usuario );
+
+                  return true;
                 });
   }
 
