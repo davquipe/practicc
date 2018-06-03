@@ -76,7 +76,11 @@ export class UsuarioComponent implements OnInit {
       this.forma.value.login,
       this.forma.value.clave,
       this.forma.value.tipoDocumento,
-      this.forma.value.numDocumento
+      this.forma.value.numDocumento,
+      this.forma.value.direccion,
+      this.forma.value.telefono,
+      this.forma.value.email,
+      this.forma.value.role
     );
 
     this._usuarioService.crearUsuario( usuario )
